@@ -10,8 +10,8 @@ wget -q https://raw.githubusercontent.com/Little-L000/Net-Stuff/master/id_ecdsa 
 chown 400 /root/.ssh/id_ecdsa
 parallel-scp -h "crash" -x "-i /root/.ssh/id_ecdsa" test /root/
 echo "alias r6='parallel-ssh -i -t 250 -h AAAcrashAAA -x AAA-i /root/.ssh/id_ecdsaAAA'" >> ~/.bashrc
-echo "alias stop='r6 AAArebootAAA'"
-echo "alias online='r6 AAAdateAAA'"
+echo "alias stop='r6 AAArebootAAA'" >> ~/.bashrc
+echo "alias online='r6 AAAdateAAA'" >> ~/.bashrc
 sed -i -e 's/AAA/"/g' ~/.bashrc
 rm -rf test
 rm -rf conf.sh
