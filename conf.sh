@@ -12,6 +12,7 @@ parallel-scp -h "crash" -x "-i /root/.ssh/id_ecdsa" test /root/
 echo "alias r6='parallel-ssh -i -t 250 -h AAAcrashAAA -x AAA-i /root/.ssh/id_ecdsaAAA'" >> ~/.bashrc
 echo "alias stop='r6 AAArebootAAA'" >> ~/.bashrc
 echo "alias online='r6 AAAdateAAA'" >> ~/.bashrc
+echo "alias stopf='r6 AAAkill -s SIGINT $(pidof ./test)AAA'" >> ~/.bashrc
 sed -i -e 's/AAA/"/g' ~/.bashrc
 rm -rf test
 rm -rf conf.sh
